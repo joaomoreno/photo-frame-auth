@@ -1,1 +1,15 @@
-cool
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting...</title>
+    <script>
+        window.onload = function() {
+            const searchPart = window.location.search;
+            window.location.href = 'http://localhost:3000/api/auth/callback/google' + searchPart;
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>
