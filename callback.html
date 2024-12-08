@@ -4,8 +4,11 @@
     <title>Redirecting...</title>
     <script>
         window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const state = urlParams.get('state');
+            const host = state ? state.split(',')[0] : 'localhost:3000';
             const searchPart = window.location.search;
-            window.location.href = 'http://localhost:3000/api/auth/callback' + searchPart;
+            window.location.href = `http://${host}/api/auth/callback` + searchPart;
         }
     </script>
 </head>
